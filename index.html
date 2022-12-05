@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Recipes</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <!-- <script defer type="module" src="/index.js"></script> -->
+    <script defer type="module" src="/controller.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <nav>
+        <div class="nav-left-section">
+          <div class="icon-container home-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2728/2728689.png"
+            />
+          </div>
+          <form class="search-form">
+            <label for="search-input">
+              <h1>Dish you want to cook</h1>
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Enter a recipe"
+              />
+              <button class="hidden-btn">Search</button>
+            </label>
+          </form>
+        </div>
+        <div class="nav-available">
+          <div class="icon-container">
+            <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" />
+          </div>
+          <h1>Available recipes</h1>
+        </div>
+        <div class="nav-add-recipe">
+          <div class="icon-container">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3024/3024515.png"
+            />
+          </div>
+          <h1>Add recipe</h1>
+        </div>
+        <div class="nav-bookmark">
+          <div class="icon-container">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3106/3106777.png"
+            />
+          </div>
+          <h1>Bookmarks</h1>
+        </div>
+      </nav>
+      <section class="body-container">
+        <span class="initial-message"
+          >Start by typing in the upper left box the dish you want to cook
+          😄</span
+        >
+        <section class="search-results"></section>
+        <section class="recipe-details-container"></section>
+      </section>
+      
+    </div>
+    <div class="modal hidden">
+      <div class="new-recipe-container">
+        <span class="close-btn">×</span>
+        <div class="new-recipe-title">
+          <div class="icon-container">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3003/3003655.png"
+            />
+          </div>
+          <h1>New recipe information!</h1>
+        </div>
+        <form class="new-recipe-form">
+          <label for="recipe-name">
+            <h1>Recipe</h1>
+            <input type="text" id="recipe-name" placeholder="Enter recipe" />
+          </label>
+          <label for="image-url">
+            <h1>Image url</h1>
+            <input id="image-url" placeholder="Enter image url" />
+          </label>
+          <label for="website-name">
+            <h1>Website name</h1>
+            <input id="website-name" placeholder="Recipe origination" />
+          </label>
+          <label for="website-url">
+            <h1>Website url</h1>
+            <input id="website-url" placeholder="Enter website url" />
+          </label>
+          <h1>Ingredients</h1>
+          <input
+            id="website-url"
+            placeholder="Enter ingredient"
+            data-num-ingredient="1"
+            class="ingredient-input"
+          />
+          <button class="new-recipe-btn">Save new recipe</button>
+        </form>
+        <div class="form-msg-ui">
+          <div class="ingredientes-btn-container">
+            <h1 class="btn-intructions">Add/Remove Ingredients</h1>
+            <div class="btn-flex">
+              <div class="remove-ingredient-btn add-div">
+                <span class="remove-ingredient-btn">−</span>
+              </div>
+              <div class="add-ingredient-btn rem-div">
+                <span class="add-ingredient-btn">+</span>
+              </div>
+            </div>
+          </div>
+          <div class="msg-container">
+            <span class="msg-submition"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal1 hidden">
+      <div class="new-recipe-container">
+        <span class="close-btn">×</span>
+        <div class="available-recipes-title">
+          <div class="icon-container">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/1265/1265775.png"
+            />
+          </div>
+          <h1>Searchable recipes</h1>
+        </div>
+          <ul class="options-list"></ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

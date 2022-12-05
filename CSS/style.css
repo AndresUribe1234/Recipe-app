@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+:root {
+  --first-color: #feffdf;
+  --second-color: #ffe79a;
+  --thrid-color: #ffa952;
+  --fourth-color: #ef5a5a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    110deg,
+    var(--first-color) 60%,
+    var(--second-color) 60%
+  );
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 90vh;
+  width: 90vw;
+  background-color: var(--thrid-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+}
+
+/* Header */
+nav {
+  grid-column: 1/7;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.nav-left-section {
+  display: flex;
+  align-items: center;
+}
+
+.home-btn {
+  cursor: pointer;
+}
+
+.nav-left-section .icon-container {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 1rem 0rem 2rem;
+}
+
+.nav-left-section .icon-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.nav-left-section form {
+  display: flex;
+  flex-direction: column;
+}
+.nav-left-section input {
+  margin-top: 0.5rem;
+  height: 50%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 15rem;
+  border: none;
+}
+
+.nav-left-section input:focus {
+  outline: none;
+}
+
+.nav-left-section input::placeholder {
+  opacity: 0.5;
+}
+
+.nav-left-section h1 {
+  width: 15rem;
+}
+
+.hidden-btn {
+  background-color: var(--fourth-color);
+  border: none;
+  height: 50%;
+  border-radius: 1rem;
+  position: relative;
+  left: -25%;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 5rem;
+  padding: 0.5rem;
+}
+
+.nav-available {
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-available .icon-container {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 0.25rem;
+}
+
+.nav-available .icon-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.nav-add-recipe {
+  display: flex;
+  align-items: center;
+  border: none;
+  right: 15rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.nav-add-recipe .icon-container {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 0.25rem;
+}
+
+.nav-add-recipe .icon-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.nav-bookmark {
+  /* width: 10rem; */
+  display: flex;
+  align-items: center;
+  border: none;
+  right: 2rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.nav-bookmark .icon-container {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.nav-bookmark .icon-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* App body container excluding nav */
+.body-container {
+  grid-column: 1/7;
+  grid-row: 2/7;
+  position: relative;
+  display: flex;
+}
+
+/* Api search results */
+.search-results {
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recipes-container {
+  grid-column: 1/3;
+  height: 90%;
+}
+
+.recipe-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding-bottom: 1rem;
+}
+
+.recipe-container h1 {
+  width: 13rem;
+  padding-left: 1rem;
+}
+
+.recipe-image {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.page-container {
+  width: 10rem;
+  height: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.page-btn {
+  background-color: var(--fourth-color);
+  border-radius: 50%;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+/* Recipe details container */
+
+.recipe-details-container {
+  width: 70%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-details-container {
+  align-self: center;
+  width: 80%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.image-details-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+.initial-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  text-align: center;
+}
+
+.recipe-details-container h1 {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.recipe-details-list {
+  align-items: flex-start;
+  padding: 0.5rem 1rem 1rem 1rem;
+  min-height: 20%;
+  max-height: 40%;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.recipe-details-list li {
+  width: 40%;
+  padding-bottom: 0.5rem;
+}
+
+.list-title {
+  margin-bottom: 0.5rem;
+}
+
+.bookmark-btn {
+  position: absolute;
+  display: flex;
+  bottom: 2rem;
+  right: 2rem;
+  align-items: center;
+  background-color: #ef5a5a;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.bookmark-btn .icon-container {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.bookmark-btn .icon-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.modal,
+.modal1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal css */
+.new-recipe-container {
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--second-color);
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-recipe-title,
+.available-recipes-title {
+  display: flex;
+  background-color: var(--first-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.new-recipe-title .icon-container,
+.available-recipes-title .icon-container {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+.new-recipe-title .icon-container img,
+.available-recipes-title .icon-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  font-size: 5rem;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.new-recipe-form {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  height: 35rem;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.new-recipe-form label {
+  margin-bottom: 0.5rem;
+  width: 13rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-recipe-form input {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  width: 13rem;
+}
+
+.new-recipe-form input:focus {
+  outline: none;
+}
+
+.ingredientes-btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.ingredientes-btn-container .btn-intructions,
+.msg-submition,
+.ingredientes-btn-container {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0 1rem 0 1rem;
+}
+
+.btn-flex {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.add-div,
+.rem-div {
+  margin-right: 1rem;
+  background-color: var(--thrid-color);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.new-recipe-btn {
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  width: 13rem;
+  margin-top: 1rem;
+}
+
+.new-recipe-btn:hover {
+  background-color: #ef5a5a;
+  opacity: 0.7;
+}
+
+.form-msg-ui {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+}
+
+.search-query-options {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 80%;
+  overflow: auto;
+}
+
+.options-list {
+  margin: 1rem;
+  overflow: auto;
+  padding: 0 0 0 2rem;
+}
+
+.options-list li {
+  margin: 0.5rem;
+  font-size: 2rem;
+}
+
+.hidden {
+  display: none;
+}
